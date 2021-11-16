@@ -4,6 +4,9 @@ import EmotionTable from './EmotionTable.js';
 import React from 'react';
 
 class App extends React.Component {
+    componentDidMount() {
+        document.title = "Sentiment Analyzer";
+    }
   /*
   We are setting the component as a state named innercomp.
   When this state is accessed, the HTML that is set as the 
@@ -49,8 +52,9 @@ class App extends React.Component {
         let output = data.label;
         let color = "white"
         switch(output) {
-          case "positive": color = "black";break;
-          case "negative": color = "black";break;
+          case "positive": color = "green";break;
+          case "negative": color = "red"; break;
+          case "neutral": color = "yellow"; break;
           default: color = "black";
         }
         output = <div style={{color:color,fontSize:20}}>{output}</div>
